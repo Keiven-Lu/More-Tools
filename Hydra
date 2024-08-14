@@ -1,0 +1,29 @@
+// Hydra is a very useful tool that is used to crack login 
+//It is very fast and flexible
+
+//Basic Format:
+// hydra -t 16 -l [username] -p [path] -vv [Machine_IP] ssh
+
+//-t 16 --> Number of parallel connect per attempt. Essentially it speeds up the cracking process. 
+//-l [Username] --> whatever you put in the username will be use as the 'username' that hydra gonna try to find the password for
+//-p [path] --> This is the path or the folder that store the password that hydra is gonna use to crack the login
+//-vv --> Shows the login attempts with username and password
+//[Machine_IP] --> The machines Ip 
+//ssh --> Doesn't have to be ssh. Its just one of the the protocol that hydra is able to crack
+
+//Protocol 
+SSH (Secure Shell)
+FTP (File Transfer Protocol)
+HTTP (Hypertext Transfer protocol)
+HTTPS (Hypertext Transfer Protocol Secure)
+SMTP (Simple Mail Transfer Protocol)
+IMAP (Post Office Protocol 3)
+Telnet (Text base communication over the network)
+VNC (Virtual Network Computing)
+MySQL 
+PostgreSQL 
+MSSQL (Microsoft SQL Server)
+Oracle
+RDP (Remote Desktop Protocol)
+Samba
+Redis
