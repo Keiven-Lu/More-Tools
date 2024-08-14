@@ -1,3 +1,20 @@
 //For decoding Hashes
 
-//john [blank].txt -
+John Basic Syntax
+//john [File name]
+
+Automatic Cracking
+//john --wordlist=[path to wordlist] [file name or path to file]
+john --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
+
+Identifying Hashes
+// use wget to get python file
+// launch python3 hash.py
+
+Format-Specific Cracking
+john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
+//john --format=[format] --wordlis=[path to wordlist] [file]
+
+Checking the format for the hash
+//john --list=formats
+
