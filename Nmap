@@ -1,0 +1,11 @@
+//Use for scanning an IP address to see what ports are open and depending on those port there are certain things you can try to do to hack it or get information.
+
+//nmap [Ip}
+
+//-sT --> TCP scan, revealing open ports
+//-sS --> SYN scan, Stealth Scan
+//-sU --> scan for open UDP ports
+//-sA --> See of ports are filtered by sending ACK packets
+//-sV --> service and versions ports are running on 
+//-sS --> Most common scan option
+//-p- --> Scan to see what ports are open. Usually takes a while
