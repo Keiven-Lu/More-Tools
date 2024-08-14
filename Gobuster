@@ -1,3 +1,5 @@
 //Use for scanning website
 
-//Gobuster dir -u (URL) 
+//Gobuster dir -u (URL) -w (wordlsit)
+//Gobuster dir -u (URL) -w (wordlsit) -x php,txt,html,py --> you can do a -x to specify what kind of page you want to search for
+
