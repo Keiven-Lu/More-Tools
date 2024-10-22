@@ -1,0 +1,9 @@
+/etc
+  Common location to store system files that are used by the operating system 
+  Passwd and shadow files are in here. Stores the passwords for each user in encrypted formatting
+/var
+  one of the main root folders. Stores data that is frequently accessed or written by services 
+  or applications running on the system.
+  Log file
+
+  
