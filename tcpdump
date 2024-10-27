@@ -31,9 +31,19 @@ tcpdump -i wlo1 udp port 123 --> listens on the WIFI network card and filters ud
 tcpdump -i eth0 host example.com and tcp port 443 -w https.pcap will listen eth0, the wired Ethernet interface and filter traffic exchange 
 with example.com that uses tcp and port 443. In other words, this command is filtering HTTPsS traffic related to example.com
 
+tcp-syn --> TCP SYN (Synchronize)
+tcp-ack --> TCP ACK (Acknowledge)
+tcp-fin --> TCP FIN (Finish)
+tcp-rst --> TCP RST (Reset)
+tcp-push --> TCP Push
 
+tcpdump "tcp[tcpflags] == tcp-syn" --> to capture TCP packets with only the SYN (Synchronize) flag set, while all the other flags are unset.
+tcpdump "tcp[tcpflags] & tcp-syn != 0" --> to capture TCP packets with at least the SYN (Synchronize) flag set.
+tcpdump "tcp[tcpflags] & (tcp-syn|tcp-ack) != 0" --> to capture TCP packets with at least the SYN (Synchronize) or ACK (Acknowledge) flags set.
 
-
+tcpdump "tcp[tcpflags] == tcp-syn" to capture TCP packets with only the SYN (Synchronize) flag set, while all the other flags are unset.
+tcpdump "tcp[tcpflags] & tcp-syn != 0" to capture TCP packets with at least the SYN (Synchronize) flag set.
+tcpdump "tcp[tcpflags] & (tcp-syn|tcp-ack) != 0" to capture TCP packets with at least the SYN (Synchronize) or ACK (Acknowledge) flags set.
 
 
 
