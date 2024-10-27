@@ -9,3 +9,4 @@
 //-sV --> service and versions ports are running on 
 //-sS --> Most common scan option
 //-p- --> Scan to see what ports are open. Usually takes a while
+-F --> fast mode scans the 100 most common ports
