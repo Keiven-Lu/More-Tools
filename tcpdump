@@ -1,0 +1,54 @@
+Command	Explanation
+tcpdump -i INTERFACE	Captures packets on a specific network interface
+tcpdump -w FILE	Writes captured packets to a file
+tcpdump -r FILE	Reads captured packets from a file
+tcpdump -c COUNT	Captures a specific number of packets
+tcpdump -n	Don’t resolve IP addresses
+tcpdump -nn	Don’t resolve IP addresses and don’t resolve protocol numbers
+tcpdump -v	Verbose display; verbosity can be increased with -vv and -vvv
+
+tcpdump -i eth0 -c 50 -v --> caputes and displays 50 packets by listening on the eth0 interface, which is a wired thernet, and display them verbosely
+tecdump -i wlo1 -w data.pcap --> captures packets by listening on the wlo1 interface (the WIFI interface) and writes the packets to data.pcap. It will continue till the user interrupts the capture CTRL-C
+tcpdump -i --> any -nn captures packets on all interfaces and displays them on screen without domain name or protocol resolution
+
+Three logical operators that can be handy:
+and --> captures packets where both conditions are true. Example, tcpdump host 1.1.1.1 and tcp captures tcp traffic with host 1.1.1.1
+or --> Captures packets when either one of the condition is true. For instance, tcpdump udp or icmp captures UDP and ICMP traffic
+not --> captures packets when the condition is not true. Example, tcpdump not tcp captures all packets except TCP segments; we expect to find UDP, ICMP and ARP packets among the results
+
+
+Command	Explanation
+tcpdump host IP or tcpdump host HOSTNAME	--> Filters packets by IP address or hostname
+tcpdump src host IP or	--> Filters packets by a specific source host
+tcpdump dst host IP	--> Filters packets by a specific destination host
+tcpdump port PORT_NUMBER	--> Filters packets by port number
+tcpdump src port PORT_NUMBER	--> Filters packets by the specified source port number
+tcpdump dst port PORT_NUMBER	--> Filters packets by the specified destination port number
+tcpdump PROTOCOL	--> Filters packets by protocol; examples include ip, ip6, and icmp
+
+tcpdump -i any tcp port 22 --> listens on all interfaces and captures tcp packets to or from port 22
+tcpdump -i wlo1 udp port 123 --> listens on the WIFI network card and filters udp traffic to port 123, the Network TIme Protocol (NTP)
+tcpdump -i eth0 host example.com and tcp port 443 -w https.pcap will listen eth0, the wired Ethernet interface and filter traffic exchange 
+with example.com that uses tcp and port 443. In other words, this command is filtering HTTPsS traffic related to example.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
