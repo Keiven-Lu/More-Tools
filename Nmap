@@ -2,6 +2,8 @@
 
 //nmap [Ip}
 
+//-sL --> Lsit scna - list targets without scanning 
+//-sn --> ping scan - host discovery only
 //-sT --> TCP scan, revealing open ports
 //-sS --> SYN scan, Stealth Scan
 //-sU --> scan for open UDP ports
@@ -9,4 +11,27 @@
 //-sV --> service and versions ports are running on 
 //-sS --> Most common scan option
 //-p- --> Scan to see what ports are open. Usually takes a while
--F --> fast mode scans the 100 most common ports
+//-F --> fast mode scans the 100 most common ports
+//-O --> OS detection 
+//-sV --> Service and version detection 
+//-A --> OS detection, version detection, and other additions
+//-Pn --> Scan hosts that appear to be down 
+//-v --> verbose output 
+//-d --> Debugging level - for example -d and -d9
+//-oN<filename> --> Normal Output 
+//-oX<filename> --> XML output
+//-oG><filename> --> grep-able output
+//-oA<basename> --> output in all major formats
+
+Timing	Total Duration
+T0 (paranoid)	--> 9.8 hours
+T1 (sneaky)	--> 27.53 minutes
+T2 (polite)	--> 40.56 seconds
+T3 (normal)	--> 0.15 seconds
+T4 (aggressive)	--> 0.13 seconds
+
+Option	Explanation
+-T<0-5>	--> Timing template – paranoid (0), sneaky (1), polite (2), normal (3), aggressive (4), and insane (5)
+--min-parallelism <numprobes> and --max-parallelism <numprobes>	--> Minimum and maximum number of parallel probes
+--min-rate <number> and --max-rate <number>	--> Minimum and maximum rate (packets/second)
+--host-timeout	--> Maximum amount of time to wait for a target host
