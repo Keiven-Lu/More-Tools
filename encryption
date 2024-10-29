@@ -1,0 +1,41 @@
+Symmetric encryption, also known as sysmmetric cryptography, uses the same key to encrypt and decrypt the data. Keeping the key secret is a must; it is also called private key
+Furthermore, communicating the key to the intended parties can be challenging as it requires a secure communication channel. Maintaining the secrecy of the key can be a 
+significant challenge, especually if there are many recipients. The problems becomes more severe in the presence of a powerful adversary; consider the threat of industrial espionage.
+
+Asymmetric encryption uses the same key for ecryption and decryption, asymmetric encryption uses a pair of keys, one to encrypt and the other to decrypt. To protect 
+confidentiality, asymmetric encryption or asymmetric cryptography encrypts the data using the public key; hence it is also called public key cryptography
+
+Authentication: You want to be sure you communicate with the right person, not someone else pretending.
+Authenticity: You can verify that the information comes from the claimed source.
+Integrity: You must ensure that no one changes the data you exchange.
+Confidentiality: You want to prevent an unauthorised party from eavesdropping on your conversations.
+
+p and q are large prime numbers
+n is the product of p and q
+The public key is n and e
+The private key is n and d
+m is used to represent the original message, i.e., plaintext
+c represents the encrypted text, i.e., ciphertext
+
+DSA (Digital Signature Algorithm) is a public-key cryptography algorithm specifically designed for digital signatures.
+ECDSA (Elliptic Curve Digital Signature Algorithm) is a variant of DSA that uses elliptic curve cryptography to provide smaller key sizes for equivalent security.
+ECDSA-SK (ECDSA with Security Key) is an extension of ECDSA. It incorporates hardware-based security keys for enhanced private key protection.
+Ed25519 is a public-key signature system using EdDSA (Edwards-curve Digital Signature Algorithm) with Curve25519.
+Ed25519-SK (Ed25519 with Security Key) is a variant of Ed25519. Similar to ECDSA-SK, it uses a hardware-based security key for improved private key protection.
+
+Bob chooses two prime numbers: p = 157 and 1 = 199. he calculates n = p * q =31243 
+With ϕ(n) = n - p - q + 1 = 31243 - 157 - 199 + 1 = 30888, Bob selectes e = 163 such that e is relatively prime to ϕ(n);
+moreover, he selects d = 379, where e * d = 1 mod ϕ(n), i.e., e * d = 163 * 379 = 61777 and 61777 mod 30888 = 1. The public key is (n,e), i.e., 
+(31243,163) and the private key is $(n,d), i.e., (31243,379)
+
+Cryptography is the science of securing communication and data using codes and ciphers 
+Cryptanalysis is the study of methods to break or bypass cryptographic security systems without knowing the key 
+Brute-Force Attack is an attack method that involves trying every possible key or passwords to decrypt a message 
+Dictinoary Attack is an attack method where the attacker tries dictionary words or combination of them. 
+
+
+
+
+
+
+
