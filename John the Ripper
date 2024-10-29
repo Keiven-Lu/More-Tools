@@ -18,3 +18,16 @@ john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.
 Checking the format for the hash
 //john --list=formats
 
+Single Crack Mode
+//john --single --format=Raw-SHA256 hash.txt
+
+zip2john zipfile.zip > zipfile.txt  
+john --wordlist=/usr/share/wordlist/rockyou zipfile.txt --> gets the password for the zip file
+unzip the zip file and enter the password 
+
+rar2john rarfile.rar > rarfile.txt
+john --wordlist=/usr/share/wordlist/rockyou rarfile.txt 
+unrar the rar file and enter password 
+
+ssh2john id_rsa > id_rsa.txt
+john --wordlist=/usr/share/wordlists/rockyou id_rsa.txt
