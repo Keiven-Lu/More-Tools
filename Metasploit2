@@ -1,0 +1,46 @@
+The Metasploit Framework is a set of tools that allow information gathering, scanning, exploitation, exploit development, post-exploitation, and more. While te primary usage 
+focuses on the penetration testing domain, it is also useful for vulnerability research and exploit development
+
+Main components of the Metasploit Framework 
+msfconsole --> Main command-line interface
+Modules --> supporting modules such as exploits, scanners, payloads, etc
+Tools --> Stand-alone tools that will help vulnerability research, vulnerability assessment, or penetrating testing.
+msfvenom, pattern_create and pattern_offset. 
+
+Exploit --> A piece of code that uses a vulnerability present on the target system
+Vulnerability --> A design, coding, or logic flaw affecting the target system. The exploitation of a vulnerability can result in disclosing confidential information 
+or allowing the attacker to execute code on the target system
+Payload --> An exploit will take afvantage of vulnerability. However, if we want the exploit to have the result we want, we need to use a payloads. Payloads are the code that will run on the target machine
+
+Auxiliary 
+Any supporting module, such as scanners, crawlers and fuzzers, can be found here
+
+Encoders 
+Allow you to encode the exploit and payload in the hope that a signature-based antivirus solution may miss them 
+
+Adapters --> Wraps single payloads to convert them into different formats. For example, a normal single payload can be wrapped inside a powershell adapter, which will make
+a single powershell command that will execute the payload
+Singles --> Self-contained payloads (add user, launch notepad.exe, etc.) that do not need to download an additional component to run
+Stragers --> Responsible for setting up a connection channel between Metasploit and the target system. Useful when working with staged payloads. "Staged payload"
+will first upload a stager on the target system then download the rest of the payload (stage). This provides some advantages as the inital size of the payload
+will be relatively small compared to the full payload sent at once 
+Stages --> Downloaded by the stager. This will allow you to use larger sized payload
+
+Concurrency --> Number of targets to be scanned simultanesously
+Ports --> port range to be scanned
+RHOSTS --> Target or target network to be scanned 
+Thread --> Number of threads that will be used simultanesouly. More threads will result in faster scan
+
+UDP service identification 
+You can use exploit --> scanner/discovery/udp_sweep
+
+SMB scan 
+You can use exploit --> smb_enumshares or smb_version 
+scanner/smb/smb_version
+
+HTTP --> Could potentially host a web application where you can find vulnerability like SQL injection or Remote Code Execute (RCE)
+FTP --> Could allow anonymous login and provide access to interesting files 
+SMB --> Could be vulnerable to SMB exploits like MS17-010
+SSH --> Could have default or easy to guess credentials 
+RDP --> Could be vulnerabile to bluekeep or allow desktop access if weak credentials were used
+
