@@ -2,6 +2,7 @@
 
 //nmap [Ip}
 
+//--script vuln --> list the vulnerability of the machine
 //-sL --> Lsit scna - list targets without scanning 
 //-sn --> ping scan - host discovery only
 //-sT --> TCP scan, revealing open ports
