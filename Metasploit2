@@ -1,3 +1,18 @@
+//Most powerful tool that can support all phases of a penetration testing engagement, from infomation gathering to post-explortation
+
+//msfconsole
+// -search
+// -Ms17_010_eternalblue
+// -generic/shell_reverse_tcp
+
+//Postgresql
+//systemctl start postgresql
+// -msfdb init
+// -db_nmap 
+// -VNc_login
+// -search mysql_sql
+// -search mysql_schemadump
+
 The Metasploit Framework is a set of tools that allow information gathering, scanning, exploitation, exploit development, post-exploitation, and more. While te primary usage 
 focuses on the penetration testing domain, it is also useful for vulnerability research and exploit development
 
