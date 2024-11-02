@@ -1,0 +1,78 @@
+Databases are an organised collection of structured information or data that is easily accessible and can be manipulated or analysed
+
+Relational Database
+Store structured data, meaning the data inserted into this database follows a structure. For example, the data collected om a user consists of 
+first_name, last_name, email_address, username and password. When a new user joins, an entry is made in the database following this structure. This 
+structure data is stored in rows and columns in a table; relationships can then be made between two or more tables, hence the term relational databse
+
+Non-relational Database
+Instead of storing data, it store data in a non-tabular format. For example, if documents are being scanned, which can contain varying types and quantites
+of data, and are stored in a database that calls for a non-tabular format.
+Ex:
+ {
+    _id: ObjectId("4556712cd2b2397ce1b47661"),
+    name: { first: "Thomas", last: "Anderson" },
+    date_of_birth: new Date('Sep 2, 1964'),
+    occupation: [ "The One"],
+    steps_taken : NumberLong(4738947387743977493)
+}
+
+Relational database are often used when the data being stored is reliably going to be received in a consistent format, where accuracy is important, such as 
+when processing e-commerce transactions. Non-relational database, on the other hand, are better used when the data being received can vary greatly in its format but need 
+to be collected and organised in the same place, such as social media platforms collecting user-generated content.
+
+DISTINCT Clause
+Use to avoid duplicate records when doing a query, returning only unique values
+SELECT DISTINCT name FROM books;
+
+GROUP BY Clause
+Aggregates data from multiple records and groups the query results in columns. This is helpful for aggregating functions
+SELECT name, COUNT(*) FROM books GROUP BY name;
+
+ORDER BY Clause
+can be used to sort the records returned by a query in ascending or descending order. Using function slike 
+ASC and DESC can help us to accomplosh that. 
+SELECT * FROM books ORDER BY published_date ASC;
+SELECT * FROM books ORDER BY published_date DESC; 
+
+LIKE operator
+Commonly used in conjunction with clauses like WHERE in order to filter for specific patterns within a column. 
+SELECT * FROM books WHERE description LIKE "%guide%";
+
+AND Operator 
+Uses multiple conditions within a query and returns TRUE if all of them are true 
+SELECT * FROM books WHERE category = "Offensive Security" AND name = "Bug Bounty Bootcamp";
+
+OR Operator 
+Combines multiple conditions within queries and returns TRUE if at least one of these conditions are turue
+SELECT * FROM books WHERE name LIKE "%Android%" OR name LIKE "%IOS%"
+
+NOT Operator 
+Reverses the value of a boolean operator, allowing us to exclude a specific condition
+SELECT * FROM books WHERE NOT description LIKE "%guide%";
+
+BETWEEN Operator 
+Allows us to test if a value exists within a defined range
+SELECT * FROM books WHERE id BETWEEN 2 AND 4;
+
+Equal To Operator
+Compares two expressions and determines if they are equal, or it can check if a value matches another one in a sepcific column 
+SELECT * FROM books WHERE name = "Designing Secure Software";
+
+Not Equal TO Operator 
+Ccompares expressions and tests if they are not equal; it also cheks if a value differs from the one within a column 
+SELECT * FROM books WHERE category != "Offensive Security";
+
+Less Than Operator 
+Compares if the expression with a given value is lesser than the provided one 
+SELECT * FROM books WHERE published_date < "2020-01-01";
+
+Greater Than Operator
+Compares if the expression with a given value is greater than then the provided one 
+SELECT * FROM books WHERE published_date > "2020-01-01";
+
+Less Than or Equal to and Greater than or equal to operator
+<= compares if the expression with a given value is less than or equal to the provided one
+>= compares if the expression with a given value is greater than or equal to the provided one
+SELECT * FROM books WHERE publsihed_date <= "2021-11-15";
+SELECT * FROM books WHERE publsihed_date >= "2021-11-15";
