@@ -1,0 +1,80 @@
+1. Broken Access Control 
+Broken Access control allows attackers to bypass authorisation, allowing them to view sensitive data or perfomr task they aren't suppose to 
+IDOR or Insecure Direct Object Reference --> An access control vulnerability where you can access resources yopu woulnd't ordinarily be able to see. 
+
+2. Cryptographic Failures 
+Refers to any vulnerability arising from the misuse (or lack of use) of cryptographic algorithms for protecting sensitive information. 
+Web application require cryptography to provide confidentiality for their users at many levels
+Cryptographic failures often end up in web apps accidentally divulging sensitive data. This is often data directly linked to customers, but it could also 
+be more technical information, such as usernames and passwords
+At more complex levels, taking advantage of some cryptographic failures often involves techniques such as "Man in the middle attacks", whereby the attacker 
+would force user connections through a device they control. Then, they would take advantage of weak encryption on any transmitted data to access the intercepted information 
+
+3. Injection 
+Very common in application todays. These flaws occur because the application interprets user-controlled input as commands or parameters. 
+Injection attacks depend on what technologies are used and how these technologies interpret the input.
+SQL injection --> This occurs when user-controlled input is passed to SQL queries. As a result, an attacker can pass in SQL queries to manipulate the outcome of such queries. 
+This could potentially allow the attacker to access, modify and delete informaiton in a database when this input is passed into database queries. This would mean an attacker could 
+steal sensitive information such as personal details and credentials
+Command injection --> This occurs when user input is passed to system commands. As a result, an attacker can execute arbitary system coammnds on application servers, potentially allowing 
+them to access user's systems
+
+4. Insecure Design 
+Refers to vulnerabilities which are inherent to the application's architecture. They are mot vulnerabilities regarding bad implementations or configurations, but the idea
+behind the whole application is flawed from the start. Most of the time, these bulnerabilties occur when an improper threat modelling is made during the planning phases
+of the application and propagated all the way up to your final app. Some other times, insecure design vulnerabilties may also be introduced by developers while adding some 
+"shortcuts" around the code to make their testing easier. A developer could, for example, disable the OTP validation in the development phases to quickly test the rest of the app without 
+manually inputting a code at each login but forget to re-enable it when sending the application to production.
+Insecure password reset --> instagram
+
+5. Secuirty Misconfiguration 
+Poorly configured permissions on cloud services, like S3 buckets
+Having unnecessary features enabled, like services, pages, accounts or privileges
+Default accounts with unchanged passwords
+Error messages that are overly detailed and allow attackers to find out more about the system
+Not using HTTP security headers
+One example of such a vulnerability was allegedly used when Patreon got hacked in 2015. Five days before Patreon was hacked, a security researcher reported to Patreon that he had found an open debug interface for a Werkzeug console. 
+Werkzeug is a vital component in Python-based web applications as it provides an interface for web servers to execute the Python code. Werkzeug includes a debug console that can be accessed either via URL on /console, 
+or it will also be presented to the user if an exception is raised by the application. In both cases, the console provides a Python console that will run any code you send to it. For an attacker, this means he can execute commands arbitrarily.
+
+6. Vulnerable and Outdated components 
+For example, let's say that a company hasn't updated their version of WordPress for a few years, and using a tool such as WPScan, you find that it's version 4.6. Some quick research will reveal that WordPress 4.6 is vulnerable to an unauthenticated 
+remote code execution(RCE) exploit, and even better, you can find an exploit already made on Exploit-DB.
+
+7. Identification and Authentication Failures
+Authentication and session management constitue core componenets of modern web applications. Authentication allows users to gain access to web application by verifying their identities. The most common form of authentication is using 
+username and password mechanism. A user would enter these credentials, and the server would verify them. The server would then provide the users' browswer with a session cookie. A session cookie is needed 
+because web servers use HTTP(S) to communicate, which is stateless. Attaching session cookies means the server will know who is sending what data. The server can then keep track of users' action.
+try to register with darren as your username. You'll see that the user already exists, so try to register " darren" instead, and you'll see that you are now logged in and can see the content present only in darren's account, which in our case, is the flag that you need to retrieve.
+
+8. Software and Data integrity Failures
+Let's think of how web applications maintain sessions. Usually, when a user logs into an application, they will be assigned some sort of session token that will need to be saved on the browser for as lomg as the session lasts.
+This token will be repeated on each subsequent request so that the web application knows who we are. These session tokens can come in many forms but are usually 
+assigned via cookies. 
+Cookies are key-value pairs that a web applicaiton will store on the user's browswer and that will be automatically repeated on each request to the website that issed them
+For example, i
+
+9. Security logging and monitoring failures
+
+
+10. Server-side request forgery 
+This type of vulnerability occurs when an attacker can coerce a web application into sending requests on their behalf to arbitrary destinations while having control of the contents of the request itself. SSRF vulnerabilities often arise from implementations where our web application needs to use third-party services.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
