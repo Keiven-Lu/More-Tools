@@ -1,5 +1,35 @@
-//Use for scanning website
+Gobuster is an open-srouce offensive tool written in Golang. It enunmerates web directories, DNS subdomains, bhosts, Amazon S3 buckets, and google cloud storage by brute force, using specific 
+wordlists and handling the incoming responses. Many security professionals use this tool for penetration testing, bug boounty, hunting, and cyber security assessments.
+
+gobuster --help 
+gobuster dir --help
+gobuster dns --help 
+gobuster vhost --help
 
 //Gobuster dir -u (URL) -w (wordlsit)
 //Gobuster dir -u (URL) -w (wordlsit) -x php,txt,html,py --> you can do a -x to specify what kind of page you want to search for
+
+Emumeration 
+The act of listing all the avaiable resources, whether they are accessible or not
+
+Brute Force 
+The act of trying every possibility until a match is found. It is like having ten keys and trying them all on a lock until one fits.
+
+
+Short Flag	Long Flag	Description
+-t	        --threads	--> This flag configures the number of threads to use for the scan. Each of these threads sends out requests with a slight delay. The default number of threads is 10. This number may be slow when using large wordlists. You can increase or decrease the number of threads depending on the available system resources.
+-w	        --wordlist	--> The flag configures a wordlist to use for iterating. Each wordlist entry is attached to the URL you included in the command.
+            --delay	--> This flag defines the amount of time to wait between sending requests. Some web servers include mechanisms to detect enumeration by looking at how many requests are received in a certain period of time. We can increase the delay between subsequent requests to make it look like normal web traffic.
+            --debug	--> This flag helps us to troubleshoot when our command gives unexpected errors.
+-o	        --output	--> This flag writes the enumeration results to a file we choose.
+
+Gobuster dns -d (url) -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt
+DNS mode
+dns mode allows gobuster to brute force subdomains. During a penetration test, checking the subdomains of your target's top domain is essential. just because something is patched in the regular 
+domain, it doesn't mean it is also patched in the subdomain. A ooportunity to exploit a vulnerability in one of these subdomains may exist. 
+
+Gobuster vhost -u (URL) --domain example.thm -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain --exclude-length 250-320
+vhost mode
+This mode allows gobuster to brute force virtual hosts. Virtual hosts are different websites on the same machine. Sometimes, they look like subdomains, but don't be deceived. Virtual hosts are IP-based and are running on the same server.
+Subdomain are set up in DNS. The difference between vhost and dns mode is in the way gobuster scan 
 
