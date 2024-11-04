@@ -1,0 +1,92 @@
+SIEM stands for Security Information and Event Management System. It is a tool that collects data from various 
+endpoints/network devices across the network, stores them at a centralized place, and performs correlation on them. 
+
+Host-Centric Log Sources 
+These are log sources that capture events that occurred within or relatied to the host. Some log sources that generate host-centric logs 
+are window event logs, stsmon, osquery, etc. Some examples of host centric logs are
+A user accessing a file 
+A user attempting to authenticate
+A process execution activity 
+A process adding/editing/deleting a registry key or value 
+Powershell execution
+
+Network-Centric log sources 
+Network-related logs are generated when the hosts communicate with each other or access the internet to visit a website. Some 
+network-based protocols are SSH, VPN, HTTP/s, FTP, etc. Examples:
+SSH connection
+A file being accessed via FTP 
+Web traffic 
+A user accessing comapny's resources through VPN
+Network file sharing activity
+
+Importance of SIEM 
+All these devices generate hundreds of events per second, examining the imglogs on each device one by one incase of any incident 
+can be a tedious task. That is one of the advantages of having a SIEM solution in place. It not only takes logs from various sources in realtime but also provides 
+the ability to correlate between events, search through the logs, investigate incidents and respond promptly. Some key features:
+Real-time log ingestion
+Alerting against abnormal activities 
+24/7 Monitoring and visibility 
+Protection against the lastest threats through early detection
+Data insights and visualization
+Ability to investigate past incidents
+
+Linux Workstation
+/var/log/httpd : Contains HTTP Request  / Response and error logs.
+/var/log/cron   : Events related to cron jobs are stored in this location.
+/var/log/auth.log and /var/log/secure : Stores authentication related logs.
+/var/log/kern : This file stores kernel related events.
+
+SIEM is used to provide correlation on the collected data to detect threats. Once a threat is detected, or a certain 
+threshold is crossed, an alert is raised. This alert enables the analysts to take suitable actions based on the investigation. SIEM
+plays a importatn role in the cyber security domain and helps detect and protect against the lastest threats in a timely manner. It 
+provides good visibility of what's happening within the network infrastructure. 
+
+Some of the common capabilities of SIEM are:
+Correlation between events from different log sources
+Provide visibility on both Host-centric and Network-centric activities
+Allow analysts to investigate the latest threats and timely response 
+Hunt for threats that are not detected by the rules in place
+
+SOC analyst responsibilities
+SOC analyysts utilize SIEM solutions in order to have better visibility of what is happening within the network.
+Some of their responsibilities are:
+Monitoring and investigating
+Identifying False positives 
+Tuning Rules and which are causing the noise or false positive
+Reporting and compliance 
+Identifying blind spots in the network visibility and covering them.
+
+SIEM tool get all the security-related logs ingested through agents, port forwarding, etc. Once the logs are ingested, SIEM looks for unwanted behavior 
+or suspicious pattern within the logs with the help of the conditions set in the rules by the analysts. If the condition is met, 
+a rule gets triggered, and the incident is investigated
+
+Dashboard
+Dashboards are the most important components of any SIEM. SIEM presents the data for analysis after being normalized and ingested. The summary of these 
+analyses is presented in the form of actionable insights with the help of multiple dashboards. Each SIEM solution comes with some default dashboards and provides 
+an option for custom dashboard creation. Some of the information that can be found on the dashboard are:
+Alert highlights 
+System Notification 
+Health alert
+List of failed login attempts 
+Events ingested count 
+Rules triggered
+Top Domains visited
+
+Correlation Rules
+Correlation rules play an important role in the timely detection of threats allowing analysts to take action on time. Correlation rules are pretty much logical expressions set to be triggered. A few examples of correlation rules are:
+
+If a User gets 5 failed Login Attempts in 10 seconds - Raise an alert for Multiple Failed Login Attempts
+If login is successful after multiple failed login attempts - Raise an alert for Successful Login After multiple Login Attempts
+A rule is set to alert every time a user plugs in a USB (Useful if USB is restricted as per the company policy)
+If outbound traffic is > 25 MB - Raise an alert to potential Data exfiltration Attempt (Usually, it depends on the company policy)
+
+Alert Investigation
+When monitoring SIEM, analysts spend most of their time on dashboards as it displays various key details about the network in a very summarized way. Once an alert is triggered, the events/flows associated with the alert are examined, and the rule is checked to see which conditions are met. Based on the investigation, the analyst determines if it's a True or False positive. Some of the actions that are performed after the analysis are:
+
+Alert is False Alarm. It may require tuning the rule to avoid similar False positives from occurring again.
+Alert is True Positive. Perform further investigation.
+Contact the asset owner to inquire about the activity.
+Suspicious activity is confirmed. Isolate the infected host.
+Block the suspicious IP.
+
+
