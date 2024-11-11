@@ -1,0 +1,39 @@
+CIA 
+Confidentiality --> Ensures that only the intended persons or recipients can access the data
+Integrity --> aims to ensure that the data cannot be altered; moreover, we can detect any alteration of it occurs
+Availability --> aims to ensure that the system or service is available when needed
+
+DAD
+Disclosure --> is the opposite of confidentiality. In other words, disclousre of confidential data would be an attack on confidentiality
+Alteration --> is the opposite of integrity. For example, the integrity of a cheque is indispensable
+Destruction/Denial --> is the opposite of Availability
+
+Bell-LaPadula Model 
+Aims to achieve confidentiality by specifying three rules
+Simple security Property --> This property is referred to as "no read up"; it states that a subject at a lower security level cannot 
+read an obkect at a higher security level. This rule prevents access to sensitive information above the authroized level
+Star Security Property --> This property is referred to as "no write down"; it states that a subject at a higher security level cannot 
+write to an object at a lower security level. This rule prevents the disclousre of sensitive informaiton to a subject of lower secutiy level
+Discrentionary-Security Property --> this property uses an access matrix to allow read and write operation. 
+
+Biba Model
+The Biba Model aims to achieve integrity by specifying two main rules:
+
+Simple Integrity Property: This property is referred to as “no read down”; a higher integrity subject should not read from a lower integrity object.
+Star Integrity Property: This property is referred to as “no write up”; a lower integrity subject should not write to a higher integrity object.
+
+Clark-Wilson Model
+The Clark-Wilson Model also aims to achieve integrity by using the following concepts:
+
+Constrained Data Item (CDI): This refers to the data type whose integrity we want to preserve.
+Unconstrained Data Item (UDI): This refers to all data types beyond CDI, such as user and system input.
+Transformation Procedures (TPs): These procedures are programmed operations, such as read and write, and should maintain the integrity of CDIs.
+Integrity Verification Procedures (IVPs): These procedures check and ensure the validity of CDIs.
+
+
+
+
+
+
+
+
