@@ -51,6 +51,10 @@ NOT Operator
 Reverses the value of a boolean operator, allowing us to exclude a specific condition
 SELECT * FROM books WHERE NOT description LIKE "%guide%";
 
+In Operator
+If there is multiple criteria you can use the In to loop through it
+SELECT * FROM books where zip in  (123123,12312,3123123,123)
+
 BETWEEN Operator 
 Allows us to test if a value exists within a defined range
 SELECT * FROM books WHERE id BETWEEN 2 AND 4;
